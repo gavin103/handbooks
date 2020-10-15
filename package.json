@@ -1,0 +1,29 @@
+{
+  "name": "handbooks",
+  "version": "1.0.0",
+  "description": "FE Walker Handbooks",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {
+    "vuepress": "^1.7.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gavin103/handbooks.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gavin103/handbooks/issues"
+  },
+  "homepage": "https://github.com/gavin103/handbooks#readme"
+}
