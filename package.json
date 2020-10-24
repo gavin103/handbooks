@@ -1,29 +1,17 @@
 {
-  "name": "handbooks",
+  "name": "handbook",
   "version": "1.0.0",
-  "description": "FE Walker Handbooks",
-  "main": "index.js",
-  "directories": {
-    "doc": "docs"
+  "author": "gavin103",
+  "scripts": {
+    "start": "vuepress dev . --open --host \"localhost\"",
+    "build": "vuepress build ."
+  },
+  "devDependencies": {
+    "vuepress": "1.5.4",
+    "vuepress-theme-reco": "1.5.7"
   },
   "dependencies": {
-    "vuepress": "^1.7.0"
+    "vue-class-component": "^7.2.3"
   },
-  "devDependencies": {},
-  "scripts": {
-    "dev": "vuepress dev docs",
-    "build": "vuepress build docs",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gavin103/handbooks.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/gavin103/handbooks/issues"
-  },
-  "homepage": "https://github.com/gavin103/handbooks#readme"
+  "description": "A Headbook from Gavin"
 }
