@@ -9,8 +9,10 @@ git clone https://github.com/gavin103/gavin103.github.io.git
 cp -fr public/* gavin103.github.io/
 
 cd gavin103.github.io
+echo $(date +%Y-%m-%d_%H:%M:%S) >> README.md
+echo "======>更新完成<======" >> README.md
 git add .
-git commit -m "deploy"
+git commit -m $(date +%Y-%m-%d_%H:%M:%S)
 git push
 
 echo "================"
