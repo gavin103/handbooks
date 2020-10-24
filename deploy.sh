@@ -3,22 +3,22 @@
 # 确保脚本抛出遇到的错误
 set -e
 
-rm -fr public 
-# 生成静态文件
-npm run build
+npm run build 
+git clone https://github.com/gavin103/gavin103.github.io.git
 
-# 进入生成的文件夹
-cd public
+cp -fr public/* gavin103.github.io/
+
+cd gavin103.github.io
+git add .
+git commit -m "deploy"
+git push
+
+echo "================"
+echo "上传完成~"
 
 # 如果是发布到自定义域名
 # echo 'www.example.com' > CNAME
 
-git init
-git add -A
-git commit -m 'deploy'
-git branch -M main
-git remote add origin https://github.com/gavin103/gavin103.github.io.git
-git push -u origin main
 # 如果发布到 https://<USERNAME>.github.io
 # https://github.com/gavin103/gavin103.github.io.git
 # git push -f https://github.com/gavin103/gavin103.github.io.git master
@@ -27,3 +27,11 @@ git push -u origin main
 # git push -f https://github.com/gavin103/handbooks.git master:gh-pages
 
 cd -
+
+rm -fr gavin103.github.io
+rm -fr public
+
+git add .
+git commit -m $(date +%Y-%m-%d_%H:%M:%S)
+git pull
+git push
