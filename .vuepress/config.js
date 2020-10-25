@@ -39,6 +39,10 @@ module.exports = {
             "text": "JS算法",
             "link": "/docs/algorithms/"
           },
+          {
+            "text": "面试总结",
+            "link": "/docs/interview/"
+          },
         ]
       },
       {
@@ -69,15 +73,26 @@ module.exports = {
       ],
       "/docs/algorithms/": [
         "",
-        "plugin",
-        "api"
+        {
+          "title": "排序算法",
+          "collapsable": false,
+          "children": [
+            { "title": "冒泡排序", "path": "/docs/algorithms/sort/bubble" },
+            { "title": "选择排序", "path": "/docs/algorithms/sort/selection" },
+            { "title": "插入排序", "path": "/docs/algorithms/sort/insertion" },
+            { "title": "归并排序", "path": "/docs/algorithms/sort/merge" },
+          ]
+        }
       ],
+      "/docs/interview/": [
+        ""
+      ]
     },
     "type": "blog",
     "blogConfig": {
       "category": {
         "location": 3,
-        "text": "随笔"
+        "text": "博文杂记"
       },
       "tag": {
         "location": 4,
