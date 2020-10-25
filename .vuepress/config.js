@@ -85,7 +85,14 @@ module.exports = {
         }
       ],
       "/docs/interview/": [
-        ""
+        "",
+        {
+          "title": "算法题",
+          "collapsable": false,
+          "children": [
+            { "title": "实现LRU类", "path": "/docs/interview/algo/lru" },
+          ]
+        }
       ]
     },
     "type": "blog",
