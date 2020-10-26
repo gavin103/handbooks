@@ -92,6 +92,7 @@ module.exports = {
           "children": [
             { "title": "顺序搜索", "path": "/docs/algorithms/search/sequential" },
             { "title": "二分搜索", "path": "/docs/algorithms/search/binary" },
+            { "title": "内插搜索", "path": "/docs/algorithms/search/interpolation" },
           ]
         },
         {
