@@ -40,7 +40,7 @@ module.exports = {
             "link": "/docs/algorithms/"
           },
           {
-            "text": "面试总结",
+            "text": "面试题",
             "link": "/docs/interview/"
           },
         ]
@@ -81,6 +81,24 @@ module.exports = {
             { "title": "选择排序", "path": "/docs/algorithms/sort/selection" },
             { "title": "插入排序", "path": "/docs/algorithms/sort/insertion" },
             { "title": "归并排序", "path": "/docs/algorithms/sort/merge" },
+            { "title": "计数排序", "path": "/docs/algorithms/sort/counting" },
+            { "title": "桶排序", "path": "/docs/algorithms/sort/bucket" },
+            { "title": "基数排序", "path": "/docs/algorithms/sort/radix" },
+          ]
+        },
+        {
+          "title": "搜索算法",
+          "collapsable": false,
+          "children": [
+            { "title": "顺序搜索", "path": "/docs/algorithms/search/sequential" },
+            { "title": "二分搜索", "path": "/docs/algorithms/search/binary" },
+          ]
+        },
+        {
+          "title": "随机算法",
+          "collapsable": false,
+          "children": [
+            { "title": "Fisher-Yates 随机", "path": "/docs/algorithms/shuffle" },
           ]
         }
       ],

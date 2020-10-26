@@ -1,39 +1,23 @@
-function partition(array, left, right) {
-  const pivot = array[Math.floor((right + left) / 2)];
-  let i = left;
-  let j = right;
-
-  while (i <= j) {
-    while (array[i] < pivot) {
-      i++;
-    }
-    while (array[j] > pivot) {
-      j--;
-    }
-    if (i <= j) {
-      [array[i], array[j]] = [array[j], array[i]]
-      i++;
-      j--;
-    }
-  }
-  return i;
-}
-function quick(array, left, right) {
-  let index;
-  if (array.length > 1) {
-    index = partition(array, left, right);
-    if (left < index - 1) {
-      quick(array, left, index - 1);
-    }
-    if (index < right) {
-      quick(array, index, right);
+function binarySearch(array, value) {
+  const sortedArray = array
+  let low = 0;
+  let high = sortedArray.length - 1;
+  while (low <= high) {
+    const mid = Math.floor((low + high) / 2);
+    const element = sortedArray[mid];
+    // console.log('mid element is ' + element);
+    if (element < value) {
+      low = mid + 1;
+      // console.log('low is ' + low);
+    } else if (element > value) {
+      high = mid - 1;
+      // console.log('high is ' + high);
+    } else {
+      // console.log('found it');
+      return mid;
     }
   }
-  return array;
+  return -1;
 }
-function quickSort(array) {
-  return quick(array, 0, array.length - 1);
-}
-
-const arr = quickSort([2, 3, 5, 8, 4, 6])
-console.log(arr)
+const value = binarySearch([1, 2, 3, 4, 5, 6, 7], 6)
+console.log(value)
