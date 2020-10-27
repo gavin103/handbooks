@@ -40,6 +40,10 @@ module.exports = {
             "link": "/docs/algorithms/"
           },
           {
+            "text": "读WebKit技术内幕",
+            "link": "/docs/webkit/"
+          },
+          {
             "text": "面试题",
             "link": "/docs/interview/"
           },
@@ -112,7 +116,18 @@ module.exports = {
             { "title": "实现LRU类", "path": "/docs/interview/algo/lru" },
           ]
         }
-      ]
+      ],
+      "/docs/webkit/": [
+        "",
+        "/docs/webkit/chapter01",
+        // {
+        //   "title": "第一章：浏览器和浏览器内核",
+        //   "collapsable": false,
+        //   "children": [
+        //     { "title": "实现LRU类", "path": "/docs/webkit/chapter01" },
+        //   ]
+        // }
+      ],
     },
     "type": "blog",
     "blogConfig": {
