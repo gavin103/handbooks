@@ -137,3 +137,49 @@ export default Search
 ```
 
 2.1
+```js
+function request(params) {
+  return new Promise((resolve, reject) => {
+    xxx.request({
+      params,
+      success: (ret) => {
+        resolve(ret)
+      },
+      fail: (err) => {
+        reject(err)
+      }
+    })
+  })
+}
+
+function wrappedRequest() {
+  const promiseList = []
+  let status = "empty" //empty,ongoing
+  function start() {
+    while (promiseList.length > 0) {
+      status = "ongoing"
+      const tmp = promiseList[0]
+      request(tmp).then(res => {
+        if (res.code === 999) {
+          setTimeout(start, 500)
+        }
+        promiseList.unshift()
+        if (res.code === 1) {
+          return res.data
+        }
+        return res
+      }).catch(e => alert(e))
+    }
+    status = "empty"
+  }
+  return function (param) {
+    promiseList.push(param)
+    if (status === "empty") {
+      start()
+    }
+  }
+}
+
+const pendingRequest = wrappedRequest()
+
+```

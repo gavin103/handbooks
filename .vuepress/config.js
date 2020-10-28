@@ -120,6 +120,12 @@ module.exports = {
       "/docs/webkit/": [
         "",
         "/docs/webkit/chapter01",
+        "/docs/webkit/chapter02",
+        "/docs/webkit/chapter03",
+        "/docs/webkit/chapter04",
+        "/docs/webkit/chapter05",
+        "/docs/webkit/chapter06",
+        "/docs/webkit/chapter07",
         // {
         //   "title": "第一章：浏览器和浏览器内核",
         //   "collapsable": false,
