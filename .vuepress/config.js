@@ -110,6 +110,13 @@ module.exports = {
       "/docs/interview/": [
         "",
         {
+          "title": "JS原理",
+          "collapsable": false,
+          "children": [
+            { "title": "手写call/apply/bind", "path": "/docs/interview/js-basic/call-apply-bind" },
+          ]
+        },
+        {
           "title": "算法题",
           "collapsable": false,
           "children": [
