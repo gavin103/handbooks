@@ -29,7 +29,7 @@ module.exports = {
       },
       {
         "text": "前端积累",
-        "icon": "reco-category",
+        "icon": "reco-api",
         "items": [
           {
             "text": "JS数据结构",
@@ -44,16 +44,25 @@ module.exports = {
             "link": "/docs/webkit/"
           },
           {
+            "text": "读高性能JavaScript",
+            "link": "/docs/performance/"
+          },
+          {
             "text": "面试题",
             "link": "/docs/interview/"
           },
         ]
       },
       {
-        "text": "时间轴",
-        "link": "/timeline/",
-        "icon": "reco-date"
+        "text": "图书馆",
+        "link": "/docs/books/",
+        "icon": "reco-blog"
       },
+      // {
+      //   "text": "时间轴",
+      //   "link": "/timeline/",
+      //   "icon": "reco-date"
+      // },
       {
         "text": "联系我",
         "icon": "reco-github",
@@ -141,6 +150,50 @@ module.exports = {
         //   ]
         // }
       ],
+      "/docs/books/": [
+        "",
+        {
+          "title": "编程类",
+          "collapsable": true,
+          "children": [
+            { "title": "基于MVC的JavaScript.Web富应用开发", "path": "/docs/books/book_0001" },
+            { "title": "精通正则表达式（第3版）", "path": "/docs/books/book_0002" },
+            { "title": "高性能JavaScript", "path": "/docs/books/book_0004" },
+            { "title": "WebKit技术内幕", "path": "/docs/books/book_0005" },
+            { "title": "深入理解ES6", "path": "/docs/books/book_0006" },
+            { "title": "学习JavaScript数据结构与算法（第3版）", "path": "/docs/books/book_0008" },
+            { "title": "Web性能权威指南", "path": "/docs/books/book_0009" },
+            { "title": "你不知道的JavaScript", "path": "/docs/books/book_0010" },
+            { "title": "JavaScript高级程序设计（第4版）", "path": "/docs/books/book_0011" },
+          ]
+        },
+        {
+          "title": "架构类",
+          "collapsable": true,
+          "children": [
+            { "title": "大型网站技术架构_核心原理与案例分析", "path": "/docs/books/book_0007" },
+          ]
+        },
+        {
+          "title": "网络类",
+          "collapsable": true,
+          "children": [
+            { "title": "HTTP权威指南", "path": "/docs/books/book_0003" },
+          ]
+        },
+        {
+          "title": "其他",
+          "collapsable": true,
+          "children": [
+            // { "title": "第一本书", "path": "/docs/books/fe_book_0001" },
+          ]
+        },
+
+      ],
+      "/docs/performance/": [
+        "",
+        "/docs/performance/chapter01",
+      ]
     },
     "type": "blog",
     "blogConfig": {
@@ -149,7 +202,7 @@ module.exports = {
         "text": "博文杂记"
       },
       "tag": {
-        "location": 4,
+        "location": 5,
         "text": "标签"
       }
     },

@@ -1,0 +1,30 @@
+[
+  {
+    "value": "cat",
+    "list": [
+      {
+        "value": "sand",
+        "list": [
+          {
+            "value": "dog",
+            "list": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "value": "cats",
+    "list": [
+      {
+        "value": "and",
+        "list": [
+          {
+            "value": "dog",
+            "list": []
+          }
+        ]
+      }
+    ]
+  }
+]
