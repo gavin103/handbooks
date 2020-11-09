@@ -152,43 +152,15 @@ module.exports = {
       ],
       "/docs/books/": [
         "",
-        {
-          "title": "编程类",
-          "collapsable": true,
-          "children": [
-            { "title": "基于MVC的JavaScript.Web富应用开发", "path": "/docs/books/book_0001" },
-            { "title": "精通正则表达式（第3版）", "path": "/docs/books/book_0002" },
-            { "title": "高性能JavaScript", "path": "/docs/books/book_0004" },
-            { "title": "WebKit技术内幕", "path": "/docs/books/book_0005" },
-            { "title": "深入理解ES6", "path": "/docs/books/book_0006" },
-            { "title": "学习JavaScript数据结构与算法（第3版）", "path": "/docs/books/book_0008" },
-            { "title": "Web性能权威指南", "path": "/docs/books/book_0009" },
-            { "title": "你不知道的JavaScript", "path": "/docs/books/book_0010" },
-            { "title": "JavaScript高级程序设计（第4版）", "path": "/docs/books/book_0011" },
-          ]
-        },
-        {
-          "title": "架构类",
-          "collapsable": true,
-          "children": [
-            { "title": "大型网站技术架构_核心原理与案例分析", "path": "/docs/books/book_0007" },
-          ]
-        },
-        {
-          "title": "网络类",
-          "collapsable": true,
-          "children": [
-            { "title": "HTTP权威指南", "path": "/docs/books/book_0003" },
-          ]
-        },
-        {
-          "title": "其他",
-          "collapsable": true,
-          "children": [
-            // { "title": "第一本书", "path": "/docs/books/fe_book_0001" },
-          ]
-        },
-
+        "/docs/books/cate_1",
+        "/docs/books/cate_2",
+        "/docs/books/cate_3",
+        "/docs/books/cate_4",
+        "/docs/books/cate_5",
+        "/docs/books/cate_6",
+        "/docs/books/cate_7",
+        "/docs/books/cate_8",
+        "/docs/books/cate_9",
       ],
       "/docs/performance/": [
         "",
