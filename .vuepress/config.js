@@ -1,3 +1,6 @@
+// appID: wx5888edd264b00a05
+// appSecret: 56f2dd2d7deb3380520f578fe0f6cb66
+
 module.exports = {
   "title": "handbook",
   "description": "来自Gavin103的行者记录",

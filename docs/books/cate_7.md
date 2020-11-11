@@ -11,7 +11,7 @@ title: 服务器与网络
 | Docker技术入门与实战.epub |
 
 ## Nginx:
-[**百度网盘链接**](https://pan.baidu.com/s/1ofNHCYCrkP2i9zoUhcPU9Q)  **提取码**：7hvc
+[**百度网盘链接**](https://pan.baidu.com/s/1RkjcOQ7oNrPV8tKbtEnXrw)  **提取码**：2dr2
 
 | 书目                                       |
 | ------------------------------------------ |
