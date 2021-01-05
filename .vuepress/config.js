@@ -47,12 +47,8 @@ module.exports = {
             "link": "/docs/webkit/"
           },
           {
-            "text": "读高性能JavaScript",
-            "link": "/docs/performance/"
-          },
-          {
-            "text": "面试题",
-            "link": "/docs/interview/"
+            "text": "读HTTP权威指南",
+            "link": "/docs/http/"
           },
         ]
       },
@@ -128,13 +124,6 @@ module.exports = {
             { "title": "手写call/apply/bind", "path": "/docs/interview/js-basic/call-apply-bind" },
           ]
         },
-        {
-          "title": "算法题",
-          "collapsable": false,
-          "children": [
-            { "title": "实现LRU类", "path": "/docs/interview/algo/lru" },
-          ]
-        }
       ],
       "/docs/webkit/": [
         "",
@@ -153,6 +142,16 @@ module.exports = {
         //   ]
         // }
       ],
+      "/docs/http/": [
+        "",
+        "/docs/http/chapter01",
+        "/docs/http/chapter02",
+        "/docs/http/chapter03",
+        "/docs/http/chapter04",
+        "/docs/http/chapter05",
+        "/docs/http/chapter06",
+        "/docs/http/chapter07",
+      ],
       "/docs/books/": [
         "",
         "/docs/books/cate_1",
@@ -165,10 +164,6 @@ module.exports = {
         "/docs/books/cate_8",
         "/docs/books/cate_9",
       ],
-      "/docs/performance/": [
-        "",
-        "/docs/performance/chapter01",
-      ]
     },
     "type": "blog",
     "blogConfig": {
