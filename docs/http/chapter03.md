@@ -152,3 +152,109 @@ TRACE请求行程最后一站的服务器会弹回一条 TRACE 响应，并在�
 ### 3.4.1 100~199——信息性状态码
 ![](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5a832ec55f2940c9b0fbc18bf0e7ffdc~tplv-k3u1fbpfcp-watermark.image)
 
+### 200~299——成功状态码
+![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5b2765897a3040509201807bddf8dcfb~tplv-k3u1fbpfcp-watermark.image)
+
+### 300~399——重定向状态码
+![](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b3ca121b560845d5a523b27d57d1229c~tplv-k3u1fbpfcp-watermark.image)
+
+重定向状态码要么告知客户端使用替代位置来访问他们所感兴趣的资源，要么就提供一个替代的响应而不是资源的内容。
+如果资源已被移动，可发送一个重定向状态码和一个可选的 Location 首部来告知客户端资源已被移走，以及现在可以在哪里 找到它(参见下图)。
+这样，浏览器就可以在不打扰使用者的情况下，透明地转入新的位置了。
+![](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7c84a84f500e44d3a16030ae91d936e4~tplv-k3u1fbpfcp-watermark.image)
+可以通过某些重定向状态码对资源的应用程序本地副本与源端服务器上的资源进行验证。
+比如，HTTP 应用程序可以查看其资源的本地副本是否仍然是最新的，或者在源端服务器上资源是否被修改过。
+下图显示了一个这样的例子。客户端发送了 一个特殊的 If-Modified-Since 首部，说明只读取 1997 年 10 月之后修改过的文 档。
+这个日期之后，此文档并未被修改过，因此，服务器回送了一个 304 状态码， 而不是文档的内容。
+![](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/c0d64bfbb5054de89f1404c407b236b3~tplv-k3u1fbpfcp-watermark.image)
+
+### 3.4.4 400~499——客户端错误状态码
+很多客户端错误都是由浏览器来处理的，甚至不会打扰到你。只有少量错误，比如404，还是会穿过浏览器来到用户面前。
+![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/df12446256884b5b806cc589e95d37f7~tplv-k3u1fbpfcp-watermark.image)
+
+### 3.4.5 500~599——服务器错误状态码
+![](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d5da36a7782841ad96035bc51cf89f65~tplv-k3u1fbpfcp-watermark.image)
+
+## 3.5 首部
+首部和方法配合工作，共同决定了客户端和服务器能做什么事情。
+
+- **通用首部** 
+这些是客户端和服务器都可以使用的通用首部。比如Date：```Date: Tue, 3 Oct 1974 02:16:00 GMT```
+
+- **请求首部** 
+请求首部是请求报文特有的。它们为服务器提供了一些额外信息，比如客户端希望接收什么类型的数据：```Accept: */*```
+
+- **响应首部** 
+响应报文有自己的首部集，以便为客户端提供信息。比如，客户端在与哪种类型的服务器进行交互：```Server: Tiki-Hut/1.0```
+
+- **实体首部** 
+实体首部指的是用于应对实体主体部分的首部。比如，可以用实体首部来说明实体主体部分的数据类型：```Content-Type: text/html; charset=iso-latin-1```
+
+- **扩展首部** 
+扩展首部是非标准的首部，由应用程序开发者创建，但还未添加到已批准的 HTTP 规范中去。
+即使不知道这些扩展首部的含义，HTTP 程序也要接受它们并 对其进行转发。
+
+### 3.5.1 通用首部
+![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/047e27f909304110afcafae7954788e2~tplv-k3u1fbpfcp-watermark.image)
+![](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7c05ed774ea64001b6a49916b1ab9ec8~tplv-k3u1fbpfcp-watermark.image)
+
+### 3.5.2 请求首部
+![](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/11dc0d57e8844b0aaab63cafae9c51d2~tplv-k3u1fbpfcp-watermark.image)
+
+- **Accept首部**
+
+Accept 首部为客户端提供了一种将其喜好和能力告知服务器的方式，包括它们想要什么，可以使用什么，以及最重要的，它们不想要什么。
+这样，服务器就可以根据这些额外信息，对要发送的内容做出更明智的决定。
+![](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/197af3ddb1774e9d8b1b7feab76d8114~tplv-k3u1fbpfcp-watermark.image)
+
+- **条件请求首部**
+
+有时客户端希望为请求加上某些限制。
+比如，如果客户端已经有了一份文档副本， 就希望只在服务器上的文档与客户端拥有的副本有所区别时，才请求服务器传输文档。
+通过条件请求首部，客户端就可以为请求加上这种限制，要求服务器在对请求 进行响应之前，确保某个条件为真。
+![](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/96c1e01954c04ba8b63826e575c1fa4d~tplv-k3u1fbpfcp-watermark.image)
+
+- **安全请求首部**
+
+HTTP 本身就支持一种简单的机制，可以对请求进行质询 / 响应认证。
+这种机制要求客户端在获取特定的资源之前，先对自身进行认证，这样就可以使事务稍微安全一些。
+![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/cf0de153dae64b6a84207ee19f72004b~tplv-k3u1fbpfcp-watermark.image)
+
+- **代理请求首部**
+
+![](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d918a8a81786434ea98f57024f05e66a~tplv-k3u1fbpfcp-watermark.image)
+
+### 3.5.3 响应首部
+
+响应首部为客户端提供了一些额外信息，比如谁在 发送响应、响应者的功能，甚至与响应相关的一些特殊指令。
+这些首部有助于客户端处理响应，并在将来发起更好的请求。
+![](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/9aa8d6daba944d6d90d0dcfcdce4fac4~tplv-k3u1fbpfcp-watermark.image)
+
+- **协商首部**
+
+如果资源有多种表示方法——比如，如果服务器上有某文档的法语和德语译稿， HTTP/1.1 可以为服务器和客户端提供对资源进行协商的能力。
+![](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d97492c7a08343c389318de5e58643a4~tplv-k3u1fbpfcp-watermark.image)
+
+- **安全响应首部**
+
+我们已经看到过安全请求首部了，本质上这里说的就是 HTTP 的质询 / 响应认证机制的响应侧。
+![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/973926fe6c854df5a91bdf55d47fac32~tplv-k3u1fbpfcp-watermark.image)
+
+### 3.5.4 实体首部
+
+实体首部提供了有关实体及其内容的大量信息，从有关对象类型的信息，到能够对资源使用的各种有效的请求方法。
+总之，实体首部可以告知报文的接收者它在对什么进行处理。
+![](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/2d4788d4f1b2491182e504935e30d78d~tplv-k3u1fbpfcp-watermark.image)
+
+- **内容首部**
+
+内容首部提供了与实体内容有关的特定信息，说明了其类型、尺寸以及处理它所需的其他有用信息。
+比如，Web 浏览器可以通过查看返回的内容类型，得知如何显示对象。
+![](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/da6bbd4f28ce44199e0f4c10355ee3ee~tplv-k3u1fbpfcp-watermark.image)
+
+- **实体缓存首部**
+
+通用的缓存首部说明了如何或什么时候进行缓存。
+实体的缓存首部提供了与被缓存 实体有关的信息。
+比如，验证已缓存的资源副本是否仍然有效所需的信息，以及 更好地估计已缓存资源何时失效所需的线索。
+![](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/67f50f4113124655864e99a50db43859~tplv-k3u1fbpfcp-watermark.image)
