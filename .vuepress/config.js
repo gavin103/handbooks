@@ -144,10 +144,12 @@ module.exports = {
       ],
       "/docs/http/": [
         "",
+        "/docs/http/section1",
         "/docs/http/chapter01",
         "/docs/http/chapter02",
         "/docs/http/chapter03",
         "/docs/http/chapter04",
+        "/docs/http/section2",
         "/docs/http/chapter05",
         "/docs/http/chapter06",
         "/docs/http/chapter07",
