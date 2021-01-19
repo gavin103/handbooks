@@ -237,3 +237,6 @@ User-Agent: SuperBrowser v1.3
 
 ![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d67447cc932749ff99e695a5d6cce42e~tplv-k3u1fbpfcp-watermark.image)
 
+### 6.5.4 代理既可以处理代理请求，也可以处理服务器请求
+
+由于将流量重定向到代理服务器的方式有所不同，通用的代理服务器既应该支持请求报文中的完整 URI，也应该支持部分 URI。如果是显式的代理请求，代理就应该使用完整 URI，如果是 Web 服务器请求，就应该使用部分 URI 和虚拟 Host 首部。
