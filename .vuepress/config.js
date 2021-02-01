@@ -156,6 +156,7 @@ module.exports = {
         "/docs/http/chapter08",
         "/docs/http/section3",
         "/docs/http/chapter11",
+        "/docs/http/chapter12",
       ],
       "/docs/books/": [
         "",
