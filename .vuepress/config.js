@@ -157,6 +157,7 @@ module.exports = {
         "/docs/http/section3",
         "/docs/http/chapter11",
         "/docs/http/chapter12",
+        "/docs/http/chapter13",
       ],
       "/docs/books/": [
         "",
@@ -175,11 +176,11 @@ module.exports = {
     "blogConfig": {
       "category": {
         "location": 3,
-        "text": "博文杂记"
+        "text": "每日一题"
       },
       "tag": {
         "location": 5,
-        "text": "标签"
+        "text": "分类题目"
       }
     },
     "friendLink": [
