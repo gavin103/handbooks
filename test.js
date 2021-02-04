@@ -13,9 +13,9 @@
 //     }
 //   };
   
-//   console.log(+object1);
-//   console.log(''+object1);
-//   console.log(String(object1))
+//   console.log(+object1); // 2333
+//   console.log(''+object1); // default
+//   console.log(String(object1)) // string
 
 const add=(...res)=>{
     let args = [...res];
@@ -29,7 +29,23 @@ const add=(...res)=>{
     return addArgs
 }
 
-console.log(add(1)(2)(3))                // 6
-console.log(add(1, 2, 3)(4))             // 10
-console.log(add(1)(2)(3)(4)(5))          // 15
-console.log(add(2, 6)(1))                // 9
+console.log(typeof add(1)(2)(3))               
+const fn = add(1, 2, 3)(4)
+console.log(fn)          
+console.log(add(1)(2)(3)(4)(5))          
+console.log(add(2, 6)(1))             
+
+// let obj2 = {
+//     i:123,
+//     valueOf: function() {
+//       console.log('valueOf');
+//       return this.i
+//     }
+//   }
+//   alert(obj2 );// [object Object]
+//   alert(+obj2 ); // 123 valueOf
+//   alert('a'+obj2 ); // a123 valueOf
+//   alert(String(obj2 )); // [object Object]
+//   alert(Number(obj2 )); // 123  valueOf
+//   alert(obj2 == '123'); // true
+//   alert(obj2 === '123'); // false
