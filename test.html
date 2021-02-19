@@ -9,48 +9,11 @@
 
 <body>
   <script>
-    /**
-     * 柯里化
-     * @param {fn} 需要被执行柯里化的函数，通常有多个参数
-     * @param {arity} 第一个参数fn所需参数的个数，curry可以通过fn.length读取，如果参数不固定可以传Infinity
-     * @return {Function} 返回柯里化的函数
-     * @example1
-     *     curried = curry((x, y, z) => x + y + z, 3)
-           curried(1, 2, 3) //6
-           curried(1, 2)(3) //6
-           curried(1)(2, 3) //6
-     * @example2
-     *     curried = curry((...res) => res.reduce((x,y)=>x+y))
-           curried(1, 2)(3).value() //6
-           curried(1)(2, 3).value() //6
-     */
-    function curry(fn, arity) {
-      let len;
-      if (typeof arity == "undefined" || arity == null) {
-        len = fn.length || Infinity
-      } else if (isNaN(arity)) {
-        throw new TypeError('arity should be a Number', 'curry.js')
-      } else if (arity <= 0) {
-        throw new Error('arity should be great than 0', 'curry.js')
-      } else {
-        len = arity
-      }
-
-      var args = [];
-
-      function curriedFn() {
-        var res = Array.prototype.slice.call(arguments)
-        args = args.concat(res)
-        return args.length >= len ? curriedFn.value() : curriedFn;
-      }
-      curriedFn.value = function () {
-        return fn.apply(this, args);
-      }.bind(this);
-
-      return curriedFn;
-    }
-
-
+      var s = "We are happy."
+      var replaceSpace = function (s) {
+        return s.replace(/\s/g, '%20')
+      };
+      console.log(replaceSpace(s))
   </script>
 </body>
 
