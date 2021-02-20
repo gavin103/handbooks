@@ -9,11 +9,28 @@
 
 <body>
   <script>
-      var s = "We are happy."
-      var replaceSpace = function (s) {
-        return s.replace(/\s/g, '%20')
-      };
-      console.log(replaceSpace(s))
+
+  function ListNode(val) {
+    this.val = val;
+    this.next = null;
+  }
+  var a = new ListNode(1)
+  var b = new ListNode(2)
+  var c = new ListNode(3)
+  a.next = b;
+  b.next = c;
+
+  var reversePrint = function (head) {
+    var current = head;
+    var result = []
+    while (typeof current != "undefined" && current != null) {
+      result.unshift(current.val)
+      current = current.next
+    }
+    return result
+  };
+
+  console.log(reversePrint(a))
   </script>
 </body>
 
