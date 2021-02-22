@@ -9,28 +9,36 @@
 
 <body>
   <script>
+    var CQueue = function () {
+      this.queue = []
+    };
 
-  function ListNode(val) {
-    this.val = val;
-    this.next = null;
-  }
-  var a = new ListNode(1)
-  var b = new ListNode(2)
-  var c = new ListNode(3)
-  a.next = b;
-  b.next = c;
+    /** 
+     * @param {number} value
+     * @return {void}
+     */
+    CQueue.prototype.appendTail = function (value) {
+      this.queue.push(value)
+    };
 
-  var reversePrint = function (head) {
-    var current = head;
-    var result = []
-    while (typeof current != "undefined" && current != null) {
-      result.unshift(current.val)
-      current = current.next
+    /**
+     * @return {number}
+     */
+    CQueue.prototype.deleteHead = function () {
+      var head = this.queue.shift()
+      if (head != undefined) {
+        return head
+      } else {
+        return -1
     }
-    return result
   };
 
-  console.log(reversePrint(a))
+    /**
+     * Your CQueue object will be instantiated and called as such:
+     * var obj = new CQueue()
+     * obj.appendTail(value)
+     * var param_2 = obj.deleteHead()
+     */
   </script>
 </body>
 
