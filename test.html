@@ -8,38 +8,30 @@
 </head>
 
 <body>
-  <script>
-    var CQueue = function () {
-      this.queue = []
-    };
-
-    /** 
-     * @param {number} value
-     * @return {void}
-     */
-    CQueue.prototype.appendTail = function (value) {
-      this.queue.push(value)
-    };
-
-    /**
-     * @return {number}
-     */
-    CQueue.prototype.deleteHead = function () {
-      var head = this.queue.shift()
-      if (head != undefined) {
-        return head
-      } else {
-        return -1
-    }
-  };
-
-    /**
-     * Your CQueue object will be instantiated and called as such:
-     * var obj = new CQueue()
-     * obj.appendTail(value)
-     * var param_2 = obj.deleteHead()
-     */
-  </script>
 </body>
 
 </html>
+<script>
+      var a = { val: 1, next: null }
+      var b = { val: 2, next: a }
+      var c = { val: 3, next: b }
+      var d = { val: 4, next: c }
+      var e = { val: 5, next: d }
+
+      var reverseList = function (head) {
+        var current = head;
+        var result = null;
+        while (current) {
+          var tmp = {
+            val: current.val,
+            next: result
+          }
+          result = tmp;
+          current = current.next;
+        }
+        return result
+};
+
+      console.log(reverseList(e))
+
+</script>
