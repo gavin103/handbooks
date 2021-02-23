@@ -50,6 +50,10 @@ module.exports = {
             "text": "读HTTP权威指南",
             "link": "/docs/http/"
           },
+          {
+            "text": "前端学Java",
+            "link": "/docs/java/"
+          },
         ]
       },
       {
@@ -170,6 +174,10 @@ module.exports = {
         "/docs/books/cate_7",
         "/docs/books/cate_8",
         "/docs/books/cate_9",
+      ],
+      "/docs/java/": [
+        "",
+        "/docs/java/day01",
       ],
     },
     "type": "blog",
