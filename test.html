@@ -12,26 +12,5 @@
 
 </html>
 <script>
-      var a = { val: 1, next: null }
-      var b = { val: 2, next: a }
-      var c = { val: 3, next: b }
-      var d = { val: 4, next: c }
-      var e = { val: 5, next: d }
-
-      var reverseList = function (head) {
-        var current = head;
-        var result = null;
-        while (current) {
-          var tmp = {
-            val: current.val,
-            next: result
-          }
-          result = tmp;
-          current = current.next;
-        }
-        return result
-};
-
-      console.log(reverseList(e))
 
 </script>
