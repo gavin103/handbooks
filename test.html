@@ -12,51 +12,9 @@
 
 </html>
 <script>
-                var a0 = new Node(7, null, null)
-                var a1 = new Node(13, null, null)
-                var a2 = new Node(11, null, null)
-                var a3 = new Node(10, null, null)
-                var a4 = new Node(1, null, null)
-
-                a0.next = a1;
-                a1.next = a2;
-                a2.next = a3;
-                a3.next = a4;
-
-                a1.random = a0;
-                a2.random = a4;
-                a3.random = a2;
-                a4.random = a0;
-
-                function Node(val, next, random) {
-                  this.val = val;
-                  this.next = next;
-                  this.random = random;
-                };
-                var copyRandomList = function (head) {
-                  var dict = new Map();
-                  var current = head;
-                  while (current) {
-                    var newNode = new Node(current.val, null, null)
-                    dict.set(current, newNode)
-                    current = current.next
-                  }
-                  current = head;
-                  while (current) {
-                    var newNode = dict.get(current)
-                    var next = dict.get(current.next)
-                    if (next) {
-                      newNode.next = next
-                    }
-                    var random = dict.get(current.random)
-                    if (random) {
-                      newNode.random = random
-                    }
-                 
-                        current = current.next
-                      }
-                      return dict.get(head)
-                    };
-                    console.log(a0)
-                    console.log(copyRandomList(a0))
+      var reverseLeftWords = function (s, n) {
+        return s.slice(n) + s.slice(0, n)
+};
+      var res = reverseLeftWords('lrloseumgh', 6)
+      console.log(res)
 </script>
