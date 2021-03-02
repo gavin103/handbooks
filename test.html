@@ -12,9 +12,15 @@
 
 </html>
 <script>
-      var reverseLeftWords = function (s, n) {
-        return s.slice(n) + s.slice(0, n)
+  var maxSlidingWindow = function (nums, k) {
+    const res = []
+    for (let i = 0; i <= nums.length - k; i++) {
+      const tmpArr = nums.slice(i, k + i)
+      if (tmpArr.length) {
+        res.push(Math.max(...tmpArr))
+      }
+    }
+    return res
 };
-      var res = reverseLeftWords('lrloseumgh', 6)
-      console.log(res)
+  console.log(maxSlidingWindow([], 0))
 </script>
