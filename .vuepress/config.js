@@ -180,6 +180,7 @@ module.exports = {
         "/docs/java/day01",
         "/docs/java/day02",
         "/docs/java/day03",
+        "/docs/java/day04",
       ],
     },
     "type": "blog",
