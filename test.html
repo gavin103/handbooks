@@ -1,26 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
-
 <body>
+  
 </body>
-
 </html>
 <script>
-  var maxSlidingWindow = function (nums, k) {
-    const res = []
-    for (let i = 0; i <= nums.length - k; i++) {
-      const tmpArr = nums.slice(i, k + i)
-      if (tmpArr.length) {
-        res.push(Math.max(...tmpArr))
-      }
-    }
-    return res
+                var MaxQueue = function () {
+                  this.queue = [];
+                  this.maxs = []
+                };
+
+                /**
+                 * @return {number}
+                 */
+                MaxQueue.prototype.max_value = function () {
+                  if (this.queue.length) {
+                    return this.maxs[this.maxs.length - 1]
+                  } else {
+                    return -1
+                  }
+                };
+
+                /** 
+                 * @param {number} value
+                 * @return {void}
+                 */
+                MaxQueue.prototype.push_back = function (value) {
+                  this.queue.push(value)
+                  if (this.maxs.length == 0) {
+                    this.maxs.push(value)
+                  } else if (value >= this.max_value()) {
+                    this.maxs.push(value)
+          }
+              };
+
+              /**
+               * @return {number}
+               */
+              MaxQueue.prototype.pop_front = function () {
+
+                if (this.queue.length) {
+                  var res = this.queue.shift()
+                  if (res == this.max_value()) {
+                    this.maxs.pop()
+                }
+                return res
+              } else {
+                return -1
+              }
 };
-  console.log(maxSlidingWindow([], 0))
+
+  /**
+   * Your MaxQueue object will be instantiated and called as such:
+   * var obj = new MaxQueue()
+   * var param_1 = obj.max_value()
+   * obj.push_back(value)
+   * var param_3 = obj.pop_front()
+   */
+
+  const m = new MaxQueue();
+  console.log(m.push_back(1))
+  // console.log(m.queue, m.maxs)
+  console.log(m.push_back(2))
+  // console.log(m.queue, m.maxs)
+  console.log(m.max_value())
+  // console.log(m.queue, m.maxs)
+  console.log(m.pop_front())
+  // console.log(m.queue, m.maxs)
+  console.log(m.max_value())
+  // console.log(m.queue, m.maxs)
 </script>
