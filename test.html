@@ -11,68 +11,15 @@
 </body>
 </html>
 <script>
-                var MaxQueue = function () {
-                  this.queue = [];
-                  this.maxs = []
-                };
-
-                /**
-                 * @return {number}
-                 */
-                MaxQueue.prototype.max_value = function () {
-                  if (this.queue.length) {
-                    return this.maxs[this.maxs.length - 1]
-                  } else {
-                    return -1
-                  }
-                };
-
-                /** 
-                 * @param {number} value
-                 * @return {void}
-                 */
-                MaxQueue.prototype.push_back = function (value) {
-                  this.queue.push(value)
-                  if (this.maxs.length == 0) {
-                    this.maxs.push(value)
-                  } else if (value >= this.max_value()) {
-                    this.maxs.push(value)
+        var fib = function (n) {
+          var fibList = [0, 1]
+          for (var i = 0; i <= n; i++) {
+            if (i > 1) {
+              fibList[i] = fibList[i - 1] + fibList[i - 2]
           }
-              };
-
-              /**
-               * @return {number}
-               */
-              MaxQueue.prototype.pop_front = function () {
-
-                if (this.queue.length) {
-                  var res = this.queue.shift()
-                  if (res == this.max_value()) {
-                    this.maxs.pop()
-                }
-                return res
-              } else {
-                return -1
-              }
+    }
+        return fibList[n]
 };
-
-  /**
-   * Your MaxQueue object will be instantiated and called as such:
-   * var obj = new MaxQueue()
-   * var param_1 = obj.max_value()
-   * obj.push_back(value)
-   * var param_3 = obj.pop_front()
-   */
-
-  const m = new MaxQueue();
-  console.log(m.push_back(1))
-  // console.log(m.queue, m.maxs)
-  console.log(m.push_back(2))
-  // console.log(m.queue, m.maxs)
-  console.log(m.max_value())
-  // console.log(m.queue, m.maxs)
-  console.log(m.pop_front())
-  // console.log(m.queue, m.maxs)
-  console.log(m.max_value())
-  // console.log(m.queue, m.maxs)
+      var res = fib(45)
+      console.log(res)
 </script>
