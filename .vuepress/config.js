@@ -182,6 +182,7 @@ module.exports = {
         "/docs/java/day03",
         "/docs/java/day04",
         "/docs/java/day05",
+        "/docs/java/day06",
       ],
     },
     "type": "blog",
